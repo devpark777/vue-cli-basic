@@ -15,7 +15,7 @@
 
         <!-- <v-list-item to="/memo_origin"> -->
         <v-list-item
-          v-for="child in item.items"
+          v-for="child in item.subitems"
           :key="child.title"
           :to="child.to"
         >
@@ -33,7 +33,8 @@
       items: [
         {
           action: 'mdi-ticket',
-          items: [
+          active: true,
+          subitems: [
               { title: 'go Home' , to : '/'},
               { title: 'go About' , to : '/about'}
               ],
@@ -42,16 +43,15 @@
         },
         {
           action: 'mdi-school',
-          items: [
+          subitems: [
               { title: '메모장(origin)' ,to:'/memo_origin'},
               { title: '메모장(vuex활용)',to:'/memo_vuex' },
-              { title: 'List Item' }
           ],
           title: '메모장',
         },
         {
           action: 'mdi-run',
-          items: [
+          subitems: [
               { title: '수정하기', to:'/user' },
               { title: 'User List(axios활용)', to:'/axios_userlist' }
               ],
@@ -60,18 +60,17 @@
         },
         {
           action: 'mdi-bottle-tonic-plus',
-          items: [{ title: 'TodoList', to:'/todolist' }],
+          subitems: [{ title: 'TodoList', to:'/todolist' }],
           title: 'TodoList',
         },
         {
           action: 'mdi-content-cut',
-          items: [{ title: '이미지보기' ,to:'/images'}],
+          subitems: [{ title: '이미지보기' ,to:'/images'}],
           title: '이미지',
         },
         {
           action: 'mdi-silverware-fork-knife',
-          active: true,
-          items: [
+          subitems: [
             { title: 'Breakfast & brunch' },
             { title: 'New American' },
             { title: 'Sushi' },
@@ -81,7 +80,7 @@
        
         {
           action: 'mdi-tag',
-          items: [{ title: 'List Item' }],
+          subitems: [{ title: 'List Item' }],
           title: 'Promotions',
         },
       ],
