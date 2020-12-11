@@ -3,15 +3,19 @@ import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify';
 
+import router from './router.js'
+import store from './store.js'
+
+
 import StatusComp from './components/Status.vue'
-import VuetifyExComp from './components/VuetifyEx.vue'
 
 Vue.config.productionTip = false
 
 Vue.component('AppStatus',StatusComp)
-Vue.component('VuetifyExComp',VuetifyExComp)
 
 new Vue({
   vuetify,
+  router,
+  store,
   render: h => h(App)
 }).$mount('#app')
