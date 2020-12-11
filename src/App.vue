@@ -42,80 +42,14 @@
        <!--이 태그는 단순한 박스다. drawer에 true면 화면에 나타나고, 
            false이면 나타나지 않음 
            app : app화면으로 동작하도록 함, 안하면 위치가 이상하게 나타남-->
-     <v-list
-        nav
-        dense
-      >
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
-          <v-list-item to="/">
-            <v-list-item-icon>
-              <v-icon>mdi-home</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Home</v-list-item-title>
-          </v-list-item>
+      
+      <Menu1></Menu1>      
+      
+      <v-divider></v-divider>
+      <v-divider></v-divider>
 
-          <v-list-item to="/about"> <!--<router-link >태그 안써도 되네... -->
-            <v-list-item-icon>
-              <v-icon>mdi-message-text</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>About</v-list-item-title>
-          </v-list-item>
+      <Menu2></Menu2>
 
-          <v-list-item to="/product">
-            <v-list-item-icon>
-              <v-icon>mdi-domain</v-icon>
-            </v-list-item-icon>
-              <v-list-item-title>Product</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item to="/todolist">
-             <v-list-item-icon>
-                <v-icon>mdi-pencil</v-icon>
-             </v-list-item-icon> 
-             <v-list-item-title>TodoList</v-list-item-title>
-          </v-list-item>
-
-           <v-list-item to="/memo_origin">
-             <v-list-item-icon>
-                <v-icon>mdi-pencil</v-icon>
-             </v-list-item-icon> 
-              <v-list-item-title>메모장(origin)</v-list-item-title>
-          </v-list-item>
-
-           <v-list-item to="/memo_vuex">
-             <v-list-item-icon>
-                <v-icon>mdi-pencil</v-icon>
-             </v-list-item-icon> 
-             <v-list-item-title>메모장(vuex기능)</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item to="/user">
-             <v-list-item-icon>
-                <v-icon>mdi-account</v-icon>
-             </v-list-item-icon> 
-             <v-list-item-title>사용자수정하기</v-list-item-title>
-          </v-list-item>
-
-           <v-list-item to="/axios_userlist">
-             <v-list-item-icon>
-                <v-icon>mdi-account</v-icon>
-             </v-list-item-icon> 
-             <v-list-item-title>User List(axios활용)</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item to="/images">
-             <v-list-item-icon>
-               <v-icon>mdi-thumb-up</v-icon>
-             </v-list-item-icon> 
-             <v-list-item-title>이미지보기</v-list-item-title>
-          </v-list-item>
-
-        </v-list-item-group>
-      </v-list>      
-     
    </v-navigation-drawer>
 
    <v-main> <!-- 앱에서 컨텐츠 영역을 지정함  -->
@@ -123,19 +57,7 @@
      <router-view></router-view>
    </v-main>
 
-   <v-footer 
-        color="primary" dark
-        absolute  
-        class="font-weight-medium"
-      > <!-- absolute ->  제일 아래화면에 닥 붙어있게 함 -->
-        <v-col
-          class="text-center"
-          cols="12"
-        >
-          <strong>Vue-Router / Vuetify/ Vuex 활용했음</strong>
-           <p>Copy right by YUPARK in 2020-2학기 캡스톤디자인(1)수업 </p>
-        </v-col>
-   </v-footer>
+   <Footer></Footer>
 
   </v-app>
   
@@ -144,13 +66,20 @@
 
 <script>
 // import ProductComp from './components/Product.vue'
+import Menu1 from '@/views/site/Menu1.vue'
+import Menu2 from '@/views/site/Menu2.vue'
+import Footer from '@/views/site/Footer.vue'
+
 import { mapState } from 'vuex'
 
 export default {
   name: 'App',
 
   components: {
-      // ProductComp
+      // ProductComp,
+      Footer,
+      Menu1,
+      Menu2
   },
   data: () => ({
     // title : 'My Vue App',
